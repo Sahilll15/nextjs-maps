@@ -1,6 +1,10 @@
+
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { ClerkProvider } from '@clerk/nextjs'
+import Header from './components/Header'
+import { SourceContextProvider, useSourceContext } from "./context/SourceContext";
+import { DestinationContextProvider } from "./context/DestinationContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -10,8 +14,18 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <SourceContextProvider>
+    <DestinationContextProvider>
+    <ClerkProvider>
+ <html lang="en">
+      <body className={inter.className}>
+        <Header />
+        {children}</body>
     </html>
+    </ClerkProvider>
+    </DestinationContextProvider>
+    </SourceContextProvider>
+
   );
 }
+
