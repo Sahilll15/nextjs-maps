@@ -1,8 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { DirectionsRenderer, GoogleMap, MarkerF, OverlayView, useJsApiLoader } from '@react-google-maps/api';
-import { useSourceContext } from '@/app/context/SourceContext';
-import { useDestinationContext } from '@/app/context/DestinationContext';
+import { useSourceContext } from '../../context/SourceContext';
+import { useDestinationContext } from '../../context/DestinationContext';
 
 const GoogleMapsSection = () => {
 

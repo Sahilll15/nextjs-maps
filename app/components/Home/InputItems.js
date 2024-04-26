@@ -2,8 +2,8 @@
 import React from 'react'
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import { useState } from 'react';
-import { useSourceContext } from '@/app/context/SourceContext';
-import { useDestinationContext } from '@/app/context/DestinationContext';
+import { useSourceContext } from '../../context/SourceContext';
+import { useDestinationContext } from '../../context/DestinationContext';
 
 const InputItems = ({type}) => {
     const [value, setValue] = useState(null);
